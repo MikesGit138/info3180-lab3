@@ -1,13 +1,14 @@
 {% extends 'base.html' %}
 
 {% block main %}
-  <h1>Contact Us</h1>
-  <form method="POST" class="contactForm">
+  <form method="POST" action="/contact" class="contactForm">
+  <h1>Contact Form</h1>
+  <p>Fill out this form to contact the site owners (All fields are required)</p>
     {{form.csrf_token}}
-    {{form.name.label}} {{form.name}}
-    {{form.email.label}} {{form.email}}
-    {{form.subject.label}} {{form.subject}}
-    {{form.message.label}} {{form.message}}
+    {{ form.name.label}}Please enter your full name {{ form.name }}
+    {{form.email.label}}Please enter your email address{{form.email}}
+    {{form.subject.label}}Please enter the subject for your message {{form.subject}}
+    {{form.message.label}}Please enter the message you would like to send {{form.message}}
     <button type="submit">Submit</button>
   </form>
 {% endblock %}
